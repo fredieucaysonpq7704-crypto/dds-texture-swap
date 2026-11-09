@@ -1,0 +1,18 @@
+# 编译产物
+dist/
+*.pdb
+*.exe.bak
+
+# 运行时生成的配置与日志
+settings.ini
+jobs.txt
+logs/
+缓冲E/
+*.bak
+
+# IDE / 临时
+.vs/
+obj/
+*.user
+Thumbs.db
+desktop.ini
