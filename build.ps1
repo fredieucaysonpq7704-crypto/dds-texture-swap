@@ -31,7 +31,8 @@ if (Test-Path $ico) { $iconArg = @('/win32icon:' + $ico) }
 
 if ($LASTEXITCODE -ne 0) { throw "compile failed (exit $LASTEXITCODE)" }
 
-Copy-Item (Join-Path $root 'README.txt') $dist -Force -ErrorAction SilentlyContinue
+$docs = Join-Path $root 'docs'
+if (Test-Path $docs) { Get-ChildItem $docs -Filter *.txt | Copy-Item -Destination $dist -Force }
 
 $fi = Get-Item $out
 "OK  ->  " + $fi.FullName
